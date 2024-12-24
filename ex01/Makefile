@@ -7,19 +7,17 @@ NAME = phonebook
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =	phonebook.cpp \
-		contact.cpp \
-		main.cpp
+SRC =	phonebook.cpp contact.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	@echo -e "$(GREEN)Sucessfully compiled $(NAME) $(RESET)"
 	
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo -e "$(GREEN)Sucessfully compiled $(NAME) $(RESET)"
 
 clean:
 	@rm -rf $(OBJ)
