@@ -4,7 +4,7 @@
 #include "contact.hpp"
 #include <iomanip>
 
-class Phonebook
+class PhoneBook
 {
 	private:
     Contact contacts[8];
@@ -15,14 +15,11 @@ class Phonebook
 
 	public:
 
-	Phonebook();
-	~Phonebook();
+	PhoneBook();
+	~PhoneBook();
 
     void add_contact();
     void search_contact() const;
 };
-
-
-
 
 #endif

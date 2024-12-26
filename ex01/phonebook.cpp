@@ -1,16 +1,16 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() : index(0), total(0) {}
-Phonebook::~Phonebook() {}
+PhoneBook::PhoneBook() : index(0), total(0) {}
+PhoneBook::~PhoneBook() {}
 
-std::string Phonebook::format_field(const std::string& field) const
+std::string PhoneBook::format_field(const std::string& field) const
 {
     if (field.length() > 10)
         return field.substr(0, 9) + ".";
     return field;
 }
 
-bool Phonebook::is_number(const std::string& str) const
+bool PhoneBook::is_number(const std::string& str) const
 {
     for (size_t i = 0; i < str.length(); ++i)
     {
@@ -20,7 +20,7 @@ bool Phonebook::is_number(const std::string& str) const
     return true;
 }
 
-void Phonebook::add_contact()
+void PhoneBook::add_contact()
 {
 	std::string f, l, n, p, d;
 
@@ -55,7 +55,7 @@ void Phonebook::add_contact()
         total++;
 }
 
-void Phonebook::search_contact() const
+void PhoneBook::search_contact() const
 {
     if (total == 0)
     {
