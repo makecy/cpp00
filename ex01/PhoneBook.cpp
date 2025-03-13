@@ -1,7 +1,6 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : index(0), total(0) {}
-PhoneBook::~PhoneBook() {}
 
 std::string PhoneBook::format_field(const std::string& field) const
 {
@@ -76,12 +75,25 @@ void PhoneBook::search_contact() const
     }
 
     int id;
-    std::cout << "Enter index to view details: ";
-    std::cin >> id;
-    std::cin.ignore();
-
-    if (id >= 0 && id < total)
-        contacts[id].display_contact();
-    else
-        std::cout << "Invalid index." << std::endl;
+    while (true)
+	{
+		std::cout << "Enter index to view details (0-7): ";
+		std::cin >> id;
+		if (std::cin.fail()) {
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+			std::cout << "Invalid input. Please enter a number between 0 and 7." << std::endl;
+			continue;
+		}
+		
+		if (id < 0 || id >= total) {
+			std::cin.ignore(10000, '\n');
+			std::cout << "Number out of range. Please enter a valid number between 0 and 7." << std::endl;
+			continue;
+		}
+		std::cin.ignore();
+		break;
+	}
+	std::cout << "You entered valid id: " << id << std::endl;
+	contacts[id].display_contact();
 }

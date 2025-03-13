@@ -15,9 +15,6 @@ class Contact
 
 	public:
 
-	Contact();
-	~Contact();
-
 	void set_values(const std::string& f, const std::string& l, const std::string& n, const std::string& p, const std::string& d);
 	void display_contact() const;
 	std::string get_field(const std::string& field) const;

@@ -1,7 +1,4 @@
-#include "contact.hpp"
-
-Contact::Contact() {}
-Contact::~Contact() {}
+#include "Contact.hpp"
 
 void Contact::set_values(const std::string& f, const std::string& l, const std::string& n, const std::string& p, const std::string& d)
 {

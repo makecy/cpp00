@@ -7,10 +7,10 @@ int	main (int ac, char **av)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
-	for (int i = 1; i < ac; ++i)
+	for (int i = 1; i < ac; i++)
 	{
 		std::string current_arg = av[i];
-		for (size_t j = 0; j < current_arg.size(); ++j)
+		for (size_t j = 0; j < current_arg.length(); j++)
 			current_arg[j] = toupper(current_arg[j]);
 		std::cout << current_arg;
 	}
